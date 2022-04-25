@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component, lazy, Suspense } from 'react';
+import './App.css'
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import LifecycleA from './components/LifecycleA';
+import PortalDemo from './components/PortalDemo';
+//import LazyLoad from './components/LazyLoad'
+import RefsDemo from './components/RefsDemo'
+//const LazyLoad = lazy(() => import('./components/LazyLoad'));
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        {/* <div>Another Component</div> */}
+        {/* <LifecycleA /> */}
+        {/* <RefsDemo /> */}
+        {/* <PortalDemo /> */}
+        {/* <FragmentDemo /> */}
+        <ClickCounter />
+        <HoverCounter />
+        {/* <Suspense fallback={<div>Loading...</div>}>
+        <LazyLoad />
+      </Suspense> */}
+      </div>
+    ); 
+  }
 }
 
 export default App;
